@@ -3,8 +3,8 @@ import React from 'react';
 const ListHandlers = (props) => {
   return (
     <div className="todo_handlers">
-      <button onClick={props.add}>Add</button>
-      <button onClick={props.clear}>Clear</button>
+      <button type="button" onClick={props.add}>Add</button>
+      <button type="button" onClick={props.clear}>Clear</button>
     </div>
   );
 };

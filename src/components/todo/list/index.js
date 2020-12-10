@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ListItems = (props) => {
-  let  data = props.data;
+  let  data = [...props.data];
   const handleCheckBox = (e, id) => {
    data[id].status = e.target.checked
     props.updateData(data);
