@@ -7,7 +7,7 @@ const TodoApp = () => {
   const initialState = [{
     id: '0',
     todo: 'one',
-    status: false
+    status: true
   },{
     id: '1',
     todo: 'two',
@@ -23,7 +23,7 @@ const TodoApp = () => {
 
   const addList = (e) => {
     e.preventDefault();
-    setData([...data, {id:`${data.length +1}`, todo: todo, status: false}]);
+    setData([...data, {id:`${data.length}`, todo: todo, status: false}]);
     setTodo('');
   }
   const clearValue = (e) => {
@@ -43,7 +43,7 @@ const TodoApp = () => {
         <input type="text" onChange = {(e) => setTodo(e.target.value)}  value={todo} />
       </form>
       <ListHandlers add={(e) => addList(e)} clear={(e) => clearValue(e)}/>
-      <ListItems data={data} delete={(e) => deleteList(e)}/>
+      <ListItems data={data} delete={(e) => deleteList(e)} updateData={setData} />
     </div>
   );
 };
