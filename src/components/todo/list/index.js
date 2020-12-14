@@ -10,12 +10,12 @@ const ListItems = (props) => {
     <div className="todo_list">
       <ul>
       {
-        props.data.map(list => {
+        props.data.map((list,idx) => {
         return (
           <div key={list.id}>
             <input type="checkbox" onChange={(e) => handleCheckBox(e,list.id)} checked={list.status}/>
             <li style={{display:"inline-flex"}}>{list.todo}</li>
-            <button id= {list.id} onClick={props.delete}>x</button>
+            <button id= {idx} onClick={props.delete}>x</button>
           </div>
         );
         })
